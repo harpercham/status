@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="css/index.css">
+
+<div class="materialContainer">
+
+
+	<div class="box">
+ 
+	   <div class="title">Application Status</div>
+	   <div >
+		<a>Name: </a><a  class='red' id="name"></a>
+
+	</div>
+
+	   <div >
+		<a>NRIC/WP: </a><a  class='red' id="wp"></a>
+	 </div>
+
+	 <div >
+		<a>Position: </a><a  class='red' id="pos"></a>
+	 </div>
+
+	 <div >
+		<a>Phone: </a><a  class='red' id="phon"></a>
+	 </div>
+
+	 <div >
+		<a>Type of Leave: </a><a  class='red' id="type"></a>
+	 </div>
+
+	 <div >
+		<a>Application Date: </a><a  class='red' id="date"></a>
+	 </div>
+
+	 <div >
+		<a>On Leave From: </a><a  class='red' id="from"></a>
+	 </div>
+
+	 <div >
+		<a>On Leave Until: </a><a  class='red' id="to"></a>
+	 </div>
+
+	 <div >
+		<a>Reason of Leave: </a><a  class='red' id="reason"></a>
+	 </div>
+	 <br>
+	 <div id="signature-pad" class="signature-pad">
+		<div class="signature-pad--body">
+		  <canvas></canvas>
+		  <button type="button"  data-action="clear" >Clear</button>	
+
+		</div>
+
+		<div class="signature-pad--footer">
+		  <div class="description">Sign & Date</div>
+		</div>
+	  </div>
+	   <div class="button login">
+		  <button onclick="download()">Download Form</button>
+	   </div>
+	</div>
+	
+ 
+	<div class="overbox">
+	   <div class="material-button alt-2"><span class="shape"><img id='status' width=300px height=140px></span></span></div>
+   </div>
+	</div>
+ </div>
+
+ <script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
+ <script src="https://unpkg.com/jspdf-autotable@3.2.11/dist/jspdf.plugin.autotable.js"></script>
+<script src="js/signature_pad.umd.js"></script>
+<script src="js/app.js"></script>
