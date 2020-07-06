@@ -8,7 +8,7 @@ window.addEventListener('message', function (e) {
   document.getElementById('pos').innerHTML = e.data[0][2];
   document.getElementById('phon').innerHTML = e.data[0][3];
   document.getElementById('date').innerHTML = e.data[0][4];
-  document.getElementById('type').innerHTML = e.data[0];
+  document.getElementById('type').innerHTML = e.data[0][5];
   document.getElementById('from').innerHTML = e.data[0][6];
   document.getElementById('to').innerHTML = e.data[0][7];
   document.getElementById('reason').innerHTML = e.data[0][8];
