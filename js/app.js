@@ -14,7 +14,7 @@ function resizeCanvas() {
   // When zoomed out to less than 100%, for some very strange reason,
   // some browsers report devicePixelRatio as less than 1
   // and only part of the canvas is cleared then.
-  var ratio =  Math.max(window.devicePixelRatio || 1, 1);
+  var ratio = Math.max(window.devicePixelRatio || 1, 1);
 
   // This part causes the canvas to be cleared
   canvas.width = canvas.offsetWidth * ratio;
@@ -75,21 +75,21 @@ clearButton.addEventListener("click", function (event) {
 });
 
 
-function genPDF(){
-var img = new Image()
-img.src =  'https://raw.githubusercontent.com/harpercham/status/master/images/Form-%20Leave%20Form.png'
- var doc = new jsPDF()
- doc.addImage(img, 'png', 0,0 , 210, 297);
- doc.setFontSize(10);
- doc.text(document.getElementById('name').innerHTML+'  ( '+document.getElementById('wp').innerHTML+' )', 60, 45);
- doc.text(document.getElementById('date').innerHTML, 158, 59);
- doc.text(document.getElementById('from').innerHTML, 80, 92);
- doc.text(document.getElementById('to').innerHTML, 145, 92);
- doc.text(document.getElementById('reason').innerHTML, 60, 104);
- doc.text(document.getElementById('phon').innerHTML, 60, 124);
- doc.setFontSize(6);
+function genPDF() {
+  var img = new Image()
+  img.src = 'https://raw.githubusercontent.com/harpercham/status/master/images/Form-%20Leave%20Form.png'
+  var doc = new jsPDF()
+  doc.addImage(img, 'png', 0, 0, 210, 297);
+  doc.setFontSize(10);
+  doc.text(document.getElementById('name').innerHTML + '  ( ' + document.getElementById('wp').innerHTML + ' )', 60, 45);
+  doc.text(document.getElementById('date').innerHTML, 158, 59);
+  doc.text(document.getElementById('from').innerHTML, 80, 92);
+  doc.text(document.getElementById('to').innerHTML, 145, 92);
+  doc.text(document.getElementById('reason').innerHTML, 60, 104);
+  doc.text(document.getElementById('phon').innerHTML, 60, 124);
+  doc.setFontSize(6);
 
- doc.save('leave form-'+document.getElementById('name').innerHTML)
+  doc.save('leave form-' + document.getElementById('name').innerHTML)
 
 }
 
@@ -97,27 +97,24 @@ img.src =  'https://raw.githubusercontent.com/harpercham/status/master/images/Fo
 
 
 var status;
-	window.addEventListener('message', function(e) {	
-		var origin = e.origin;
-			//if(origin !== 'https://scriptverse.academy')
-				//return;
-			document.getElementById('name').innerHTML = e.data[0][0];
-			document.getElementById('wp').innerHTML = e.data[0][1];
-			document.getElementById('pos').innerHTML = e.data[0][2];
-			document.getElementById('phon').innerHTML = e.data[0][3];
-			document.getElementById('date').innerHTML = e.data[0][4];
-			document.getElementById('type').innerHTML = e.data[0][5];
-			document.getElementById('from').innerHTML = e.data[0][6];
-			document.getElementById('to').innerHTML = e.data[0][7];
-			document.getElementById('reason').innerHTML = e.data[0][8];
-			if(e.data[0][9]=='approved'){ 
-				document.getElementById("status").src ="http://pngimg.com/uploads/approved/approved_PNG49.png";
-				status=1}
-			else{document.getElementById("status").src ="https://raw.githubusercontent.com/harpercham/status/master/images/pending.png";
-				status=0}
-		}, false);
-		function download() {
-		if(status==1){return genPDF()}
-		else{alert('Your leave application is still pending. Please wait patiently and you could only download the form after getting approval.')}
-}
+window.addEventListener('message', function (e) {
+  var origin = e.origin;
+  //if(origin !== 'https://scriptverse.academy')
+  //return;
+  document.getElementById('name').innerHTML = e.data[0][0];
+  document.getElementById('wp').innerHTML = e.data[0][1];
+  document.getElementById('pos').innerHTML = e.data[0][2];
+  document.getElementById('phon').innerHTML = e.data[0][3];
+  document.getElementById('date').innerHTML = e.data[0][4];
+  document.getElementById('type').innerHTML = e.data[0][5];
+  document.getElementById('from').innerHTML = e.data[0][6];
+  document.getElementById('to').innerHTML = e.data[0][7];
+  document.getElementById('reason').innerHTML = e.data[0][9];
+  if (e.data[0][9] == 'approved') {
+    document.getElementById("status").src = "http://pngimg.com/uploads/approved/approved_PNG49.png";
+  }
+  else {
+    document.getElementById("status").src = "https://raw.githubusercontent.com/harpercham/status/master/images/pending.png";
+  }
+}, false);
 
