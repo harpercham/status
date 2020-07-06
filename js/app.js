@@ -11,7 +11,7 @@ window.addEventListener('message', function (e) {
   document.getElementById('type').innerHTML = e.data[0][5];
   document.getElementById('from').innerHTML = e.data[0][6];
   document.getElementById('to').innerHTML = e.data[0][7];
-  document.getElementById('reason').innerHTML = e.data[0][10];
+  document.getElementById('reason').innerHTML = e.data[0][7];
   if (e.data[0][10] == 'approved') {
     document.getElementById("status").src = "http://pngimg.com/uploads/approved/approved_PNG49.png";
   }
